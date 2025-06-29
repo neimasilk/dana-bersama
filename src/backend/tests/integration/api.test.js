@@ -219,18 +219,18 @@ describe('API Integration Tests', () => {
       // Create sample expenses for reporting
       await TestHelpers.createTestExpense(user1.id, couple.id, {
         amount: 100000,
-        category: 'Food',
-        date: new Date('2024-01-15')
+        category: 'food_dining',
+        expense_date: new Date('2024-01-15')
       });
       await TestHelpers.createTestExpense(user1.id, couple.id, {
         amount: 200000,
-        category: 'Transportation',
-        date: new Date('2024-01-20')
+        category: 'transportation',
+        expense_date: new Date('2024-01-20')
       });
       await TestHelpers.createTestExpense(user1.id, couple.id, {
         amount: 150000,
-        category: 'Food',
-        date: new Date('2024-02-10')
+        category: 'food_dining',
+        expense_date: new Date('2024-02-10')
       });
     });
 

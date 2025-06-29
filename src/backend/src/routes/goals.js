@@ -1,58 +1,47 @@
 const express = require('express');
 const router = express.Router();
+const { authenticateToken } = require('../middleware/auth');
+const {
+  getAllGoals,
+  createGoal,
+  getGoalById,
+  updateGoal,
+  deleteGoal,
+  addContribution,
+  getCategories,
+  getGoalStats
+} = require('../controllers/goalController');
+const {
+  validateCreateGoal,
+  validateUpdateGoal,
+  validateGetGoalById,
+  validateDeleteGoal,
+  validateAddContribution,
+  validateGoalQuery
+} = require('../middleware/goalValidation');
 
-// Placeholder for goal controller
-const goalController = {
-  getAllGoals: (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: 'Get all goals endpoint - Coming soon',
-      data: []
-    });
-  },
-  createGoal: (req, res) => {
-    res.status(201).json({
-      success: true,
-      message: 'Create goal endpoint - Coming soon',
-      data: null
-    });
-  },
-  getGoalById: (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: `Get goal ${req.params.id} endpoint - Coming soon`,
-      data: null
-    });
-  },
-  updateGoal: (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: `Update goal ${req.params.id} endpoint - Coming soon`,
-      data: null
-    });
-  },
-  deleteGoal: (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: `Delete goal ${req.params.id} endpoint - Coming soon`,
-      data: null
-    });
-  },
-  contributeToGoal: (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: `Contribute to goal ${req.params.id} endpoint - Coming soon`,
-      data: null
-    });
-  }
-};
+// Get goal categories (public route)
+router.get('/categories', getCategories);
 
-// Goal routes
-router.get('/', goalController.getAllGoals);
-router.post('/', goalController.createGoal);
-router.get('/:id', goalController.getGoalById);
-router.put('/:id', goalController.updateGoal);
-router.delete('/:id', goalController.deleteGoal);
-router.post('/:id/contribute', goalController.contributeToGoal);
+// Get goal statistics
+router.get('/stats', authenticateToken, getGoalStats);
+
+// Get all goals
+router.get('/', authenticateToken, validateGoalQuery, getAllGoals);
+
+// Create new goal
+router.post('/', authenticateToken, validateCreateGoal, createGoal);
+
+// Get goal by ID
+router.get('/:id', authenticateToken, validateGetGoalById, getGoalById);
+
+// Update goal
+router.put('/:id', authenticateToken, validateUpdateGoal, updateGoal);
+
+// Delete goal
+router.delete('/:id', authenticateToken, validateDeleteGoal, deleteGoal);
+
+// Add contribution to goal
+router.post('/:id/contribute', authenticateToken, validateAddContribution, addContribution);
 
 module.exports = router;

@@ -44,6 +44,7 @@ class TestHelpers {
       amount: 100.00,
       category: 'food_dining',
       expense_date: new Date(),
+      payment_method: 'cash',
       ...overrides
     };
 

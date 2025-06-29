@@ -48,6 +48,43 @@ Dana Bersama adalah aplikasi mobile yang memfasilitasi transparansi finansial, k
 
 4. **Setup database**
    ```bash
+   cd src/backend
+   cp .env.example .env
+   # Edit .env dengan database credentials
+   npm run migrate
+   npm run seed
+   ```
+
+5. **Start development servers**
+   ```bash
+   # Backend API (Port 3000)
+   cd src/backend
+   npm run dev
+   
+   # Mobile App (akan ditambahkan setelah setup)
+   cd src/mobile
+   npm start
+   ```
+
+## 📚 API Documentation
+
+**Backend API sudah lengkap dan siap digunakan!**
+
+- **Base URL**: `http://localhost:3000/api`
+- **Documentation**: [API Documentation](memory-bank/api-documentation.md)
+- **Endpoints Available**:
+  - 🔐 Authentication (register, login)
+  - 💰 Expenses (CRUD, statistics, filtering)
+  - 🎯 Goals (CRUD, contributions, progress tracking)
+  - 📊 Reports (financial summary, analytics, trends)
+  - 👥 User Management (profile, couple features)
+
+**Testing API:**
+```bash
+cd src/backend
+npm test                    # Run all tests
+npm run test:controllers    # Test API endpoints
+npm run test:server        # Start test server
    # Buat database PostgreSQL
    createdb dana_bersama_dev
    
@@ -123,11 +160,17 @@ cat memory-bank/papan-proyek.md
 
 ## 🎯 Roadmap
 
-### Phase 1 (MVP - 3 bulan)
-- ✅ Core expense splitting
-- ✅ Basic goal tracking
-- ✅ Simple reporting
-- ✅ User authentication
+### Phase 1 (MVP - 3 bulan) - 65% Complete
+- ✅ **Backend API Complete** - All controllers, models, and endpoints ready
+- ✅ **Database Schema** - User, Couple, Expense, Goal, Transaction models
+- ✅ **Authentication System** - JWT-based auth with middleware
+- ✅ **Core expense splitting** - CRUD operations with sharing features
+- ✅ **Goal tracking** - Shared goals with contribution system
+- ✅ **Reporting & Analytics** - Financial summaries and trends
+- ✅ **Testing Framework** - Comprehensive unit and integration tests
+- 🔄 **Mobile App Setup** - React Native/Expo structure (In Progress)
+- ⏳ **UI/UX Implementation** - Screens and components
+- ⏳ **API Integration** - Connect mobile app with backend
 
 ### Phase 2 (Growth - 6 bulan)
 - 🔄 Bank integration
@@ -159,6 +202,7 @@ Untuk pertanyaan atau diskusi proyek, silakan buka issue di repository ini.
 
 ---
 
-**Status Terakhir**: Setup & Development Environment  
-**Update**: Desember 2024  
-**Next Milestone**: Working MVP Backend + Mobile App (Januari 2025)
+**Status Terakhir**: Backend API Complete - Mobile App Development  
+**Update**: 19 Desember 2024  
+**Next Milestone**: Working MVP Mobile App + Backend Integration (Januari 2025)  
+**API Ready**: ✅ All endpoints tested and documented

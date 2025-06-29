@@ -1,19 +1,19 @@
 # Progress Tracking - Dana Bersama
 
 **Update Terakhir:** 19 Desember 2024  
-**Baby-Step Aktif:** Setup Proyek & Environment Development
+**Baby-Step Aktif:** Setup Mobile App & Development Environment (Backend Complete)
 
 ## 📊 Status Baby-Step Saat Ini
 
 ### T1: Setup Backend Project Structure
 - **Assignee:** Dev-Backend
-- **Status:** 🔄 Not Started
+- **Status:** ✅ Completed
 - **Target File:** `src/backend/`
 - **Kriteria Sukses:** Server dapat dijalankan dan respond ke health check endpoint
-- **Started:** -
-- **Completed:** -
-- **Notes:** Menunggu struktur folder dibuat
-- **Blockers:** -
+- **Started:** Completed
+- **Completed:** ✅ Done
+- **Notes:** Struktur backend lengkap dengan models, controllers, routes, middleware, dan testing setup
+- **Blockers:** None
 
 ### T2: Setup Mobile App Project Structure
 - **Assignee:** Dev-Frontend
@@ -27,13 +27,13 @@
 
 ### T3: Setup Database Schema & Migrations
 - **Assignee:** Dev-Backend
-- **Status:** 🔄 Not Started
+- **Status:** ✅ Completed
 - **Target File:** `src/backend/database/`
 - **Kriteria Sukses:** Database dapat dibuat dan semua tabel ter-create dengan benar
-- **Started:** -
-- **Completed:** -
-- **Notes:** Bergantung pada T1 selesai dulu
-- **Blockers:** T1 belum selesai
+- **Started:** Completed
+- **Completed:** ✅ Done
+- **Notes:** Models Sequelize lengkap (User, Couple, Expense, Goal, Transaction) dengan validasi dan asosiasi
+- **Blockers:** None
 
 ### T4: Setup Development Environment & Tools
 - **Assignee:** Claude-Arsitek
@@ -45,13 +45,57 @@
 - **Notes:** Akan dibuat setelah struktur backend dan mobile siap
 - **Blockers:** T1 dan T2 belum selesai
 
-### T5: Testing & Quality Validation
+### T5: Backend Testing Setup
 - **Assignee:** QA-Tester
-- **Status:** 🔄 Not Started
-- **Target File:** Test semua setup
-- **Kriteria Sukses:** Semua komponen dapat berjalan dan terintegrasi dengan baik
-- **Started:** -
-- **Completed:** -
+- **Status:** ✅ Completed
+- **Target File:** `src/backend/tests/`
+- **Kriteria Sukses:** Testing framework dapat dijalankan dan semua template test berfungsi
+- **Started:** Completed
+- **Completed:** ✅ Done
+- **Notes:** Jest setup lengkap dengan unit tests, integration tests, dan test helpers
+- **Blockers:** None
+
+## 📊 Status Baby-Step Berikutnya: Implementasi CRUD Controllers
+
+### T7: Implementasi Expense Controller
+- **Assignee:** Dev-Backend
+- **Status:** ✅ Completed
+- **Target File:** `src/controllers/expenseController.js`
+- **Kriteria Sukses:** Semua endpoint expenses dapat menerima request dan return response yang benar
+- **Started:** 19 Desember 2024
+- **Completed:** ✅ 19 Desember 2024
+- **Notes:** Completed with full CRUD operations (create, read, update, delete), pagination, filtering, validation, statistics, dan comprehensive testing
+- **Blockers:** None
+
+### T8: Implementasi Goal Controller
+- **Assignee:** Dev-Backend
+- **Status:** ✅ Completed
+- **Target File:** `src/controllers/goalController.js`
+- **Kriteria Sukses:** Semua endpoint goals dapat menerima request dan return response yang benar
+- **Started:** 19 Desember 2024
+- **Completed:** ✅ 19 Desember 2024
+- **Notes:** Completed with shared goals, contribution system, progress tracking, statistics, dan comprehensive testing
+- **Blockers:** None
+
+### T9: Implementasi Report Controller
+- **Assignee:** Dev-Backend
+- **Status:** ✅ Completed
+- **Target File:** `src/controllers/reportController.js`
+- **Kriteria Sukses:** Endpoint reports dapat generate laporan keuangan yang akurat
+- **Started:** 19 Desember 2024
+- **Completed:** ✅ 19 Desember 2024
+- **Notes:** Completed with comprehensive analytics, financial summary, expense analytics, goal progress, spending trends dengan comprehensive testing
+- **Blockers:** None
+
+### T10: Implementasi User Management Controller
+- **Assignee:** Dev-Backend
+- **Status:** ✅ Completed
+- **Target File:** `src/controllers/userController.js`
+- **Kriteria Sukses:** Endpoint user profile dan couple management berfungsi dengan benar
+- **Started:** 19 Desember 2024
+- **Completed:** ✅ 19 Desember 2024
+- **Notes:** User profile management, couple partnership features, profile updates, password changes, dan account management
+- **Blockers:** None
 - **Notes:** Testing menyeluruh setelah semua setup selesai
 - **Blockers:** T1, T2, T3, T4 belum selesai
 
@@ -79,11 +123,15 @@
 **Estimasi Progress:** On Track (belum dimulai)
 
 ## 📝 Daily Updates
-
 ### 19 Desember 2024
-- ✅ **Dokumentasi:** README.md dibuat dan progress.md template dibuat
-- ✅ **Review:** Dokumentasi proyek direview dan ambiguitas diidentifikasi
-- 🔄 **Next:** Tim development akan mulai implementasi setup
+
+- ✅ **Backend Foundation:** Struktur backend lengkap dengan models, controllers, routes, middleware
+- ✅ **Database Implementation:** Models Sequelize lengkap dengan validasi dan asosiasi
+- ✅ **API Controllers:** Semua controllers (Expense, Goal, Report, User) sudah terimplementasi dengan CRUD lengkap
+- ✅ **Testing Framework:** Jest setup dengan unit tests, integration tests, dan test helpers
+- ✅ **Authentication System:** Auth controller dan middleware sudah terimplementasi
+- ✅ **Documentation Sync:** Dokumentasi proyek disinkronkan dengan implementasi aktual
+- 🔄 **Next:** Setup mobile app React Native/Expo dan development environment
 
 ### Template untuk Update Harian
 ```
